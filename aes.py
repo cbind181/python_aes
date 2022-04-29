@@ -1,3 +1,4 @@
+#!/bin/env python3
 # This is a simple program to utilize AES CBC in Python 3
 # pre-requisit: `pip install pycryptodome`
 #
