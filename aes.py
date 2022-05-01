@@ -34,6 +34,15 @@ import os.path
 from os import listdir
 from os.path import isfile, join
 import time
+import sys
+
+global FILE_PATH 
+if len(sys.argv) > 1:
+  FILE_PATH = sys.argv[1]
+else:
+  with open("msg.txt", 'w') as f:
+      f.write("This is a default message.")
+  FILE_PATH = "msg.txt"
 
 class Encryptor:
     def __init__(self, key):
@@ -81,13 +90,13 @@ decryptTimes = []
 for i in range(0,20):
 
     start = time.time()
-    enc.encrypt_file("msg.txt")
+    enc.encrypt_file(FILE_PATH)
     end = time.time()
     print("encrypt time: ", end - start)
     encryptTimes.append(end - start)
 
     start = time.time()
-    enc.decrypt_file("msg.txt.enc")
+    enc.decrypt_file(FILE_PATH + ".enc")
     end = time.time()
     print("decrypt time: ", end - start)
     decryptTimes.append(end - start)
