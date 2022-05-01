@@ -39,6 +39,7 @@ import sys
 
 # This nugget assigns a global file path variable from command line argument.
 # If no argument is found, it creates a file with the Bee Movie script to work with.
+# Code starts again on line 1414
 global FILE_PATH 
 if len(sys.argv) > 1:
   FILE_PATH = sys.argv[1]
